@@ -1,0 +1,91 @@
+﻿<Window x:Class="SpinnersGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpinnersGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style x:Key="fieldsGrid" TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="FontSize" Value="20"/>
+            <EventSetter Event="Click" Handler="PlayerClicksSpace"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid x:Name="generalGrid" Background="#FF2196F3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="headerGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnRestartGame" Margin="10" Grid.Column="0" FontSize="16" Click="btnRestartGame_Click">
+                <TextBlock FontWeight="Black" Text="Restart"></TextBlock>
+            </Button>
+            <ComboBox IsReadOnly="True" VerticalContentAlignment="Center" FontSize="16" FontWeight="Black" HorizontalContentAlignment="Center" Text="Difficulty" x:Name="cbSelectDifficulty" Grid.Column="4" SelectionChanged="cbSelectDifficulty_SelectionChanged" IsEditable="True" Margin="10">
+                <ComboBoxItem HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Easy"></TextBlock>
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Medium"></TextBlock>
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Hard"></TextBlock>
+                </ComboBoxItem>
+            </ComboBox>
+            <TextBlock Text="SpinnersGame" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontWeight="Black" Grid.Column="2"></TextBlock>
+        </Grid>
+        <!--<Grid x:Name="gridBoard" Grid.Row="1" MaxWidth="400" MaxHeight="500">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0">
+                false
+                <Image Source="sprites\spinner.png"></Image>
+            </Button>
+            <Button Grid.Column="0" Grid.Row="1">
+                <Image Source="sprites\spinner.png"></Image>
+            </Button>
+            <Button Grid.Column="0" Grid.Row="2">
+                <Image Source="sprites\spinner.png"></Image>
+            </Button>
+            <Button Grid.Column="1" Grid.Row="0">
+                <Image Source="sprites\spinner.png"></Image>
+            </Button>
+            <Button Grid.Column="1" Grid.Row="1">
+                <Image Source="sprites\spinner.png"></Image>
+            </Button>
+            <Button Grid.Column="1" Grid.Row="2">
+                <Image Source="sprites\spinner.png"></Image>
+            </Button>
+            <Button Grid.Column="2" Grid.Row="0">
+                <Image Source="sprites\spinner.png"></Image>
+            </Button>
+            <Button Grid.Column="2" Grid.Row="1">
+                <Image Source="sprites\spinner.png"></Image>
+            </Button>
+            <Button Grid.Column="2" Grid.Row="2">
+                <Image Source="sprites\spinner.png"></Image>
+            </Button>
+        </Grid>-->
+        <!--<Button x:Name="btnNewGame" Click="btnNewGame_Click" Content="New game" FontWeight="Black" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"/>-->
+
+    </Grid>
+</Window>
