@@ -15,19 +15,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SpinnersGame.GameLogic;
 
-namespace SpinnersGame {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
-	public partial class MainWindow : Window {
+namespace SpinnersGame
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window {
 		public MainWindow() {
 			InitializeComponent();
 			_GameLogic.InitState(GameDifficulty.Easy);
 			DrawBoard();
 		}
 
-		GameLogic _GameLogic = new GameLogic();
+		readonly GameLogic.GameLogic _GameLogic = new GameLogic.GameLogic();
 
 		private void PlayerClicksSpace(Object sender, RoutedEventArgs e) {
 			var space = (Button)sender;
